@@ -1,0 +1,130 @@
+/*Bug No:1
+The Table Data Is Not Saving The User. And I Debugged It Is Not Saving In Your DataBase Or Console
+The Following Language I Used Here Is JavaScript , JSON , PHP , MYSql , Sql.
+*/
+//APP NAME = Saver
+//**Table Data Save**//
+function SaveTableData() {
+    const Table = document.getElementById("Data Table");
+    const Rows = Table.querySelectorAll("Data Row");
+    const Data = [];
+// Start From Index 1 To Skip The Header Row
+    for (let i = 1; i < Rows.length; i++) {
+      const Cells = rows[i].querySelectorAll('td');
+      const RowData = { 
+// Example
+        Example = JSON[
+        ,name: cells[0].innerText,
+        ,age: cells[1].innerText,
+        ,country: cells[2].innerText]
+      };
+      data.push(rowData);
+    };
+// Convert Data To JSON And Display In Console
+    const jsonData = JSON.stringify(data);
+    console.log(jsonData);
+
+//**? EXAMPLE CODE ?**//
+// JSON CODE
+JSON {
+        [
+    {
+      "Name": "Alice",
+      "Age": 30,
+      "City": "New York"
+    },
+    {
+      "Name": "Bob",
+      "Age": 25,
+      "City": "Los Angeles"
+    },
+    {
+      "Name": "Charlie",
+      "Age": 35,
+      "City": "Chicago"
+    }
+  ]
+JavaScript == JSON.log
+    };
+// Calling The Function
+SaveTableData();
+/*OUTPUT: 
+Name	Age	City
+Alice	30	New York
+Bob	25	Los Angeles
+Charlie	35	Chicago
+*/
+//**PHP Code. If You Need Use**//
+<?php
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+// Assuming you have a form with input fields named 'field1', 'field2', etc.
+// You should replace these with your actual input field names
+    
+// Retrieve data from the form
+    $field1 = $_POST['field1'];
+    $field2 = $_POST['field2'];
+// Repeat this for all fields in your form
+    
+// Connect to your database (replace dbname, username, password, and host with your actual database credentials)
+    $conn = new mysqli("host", "username", "password", "dbname");
+    
+// Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    
+// Prepare SQL statement to insert data into your table (replace 'tablename' with your actual table name)
+    $sql = "INSERT INTO tablename (field1, field2) VALUES ('$field1', '$field2')";
+// Repeat this for all fields in your table
+    
+// Execute SQL statement
+    if ($conn->query($sql) === TRUE) {
+        echo "Data saved successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    
+// Close database connection
+    $conn->close();
+}
+?>
+ You can use prepared statements or sanitization functions like `mysqli_real_escape_string()`for this purpose.
+//
+/*Bug No:2
+This Is Not Bug This Is A Blundder Mistake
+The Mistake Is : In Side Navigation Bar The All Following List And Opption Are There Exepet : Skill Train
+Add That*/
+/*Bug No:3
+The profile photo size for an average website is 400x400 pixels. But in your website that is in 4000x4000 which is very large and it not showing an image alt :Error to fix that
+HTML: ? if you need ?*/
+ <input type="file" id="imageInput" accept="image/png, image/jpg">
+ <div id="display"></div>
+*/
+/*CSS:
+#display {
+    width: 375px;
+    height: 211px;
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+}
+*/
+/*JS:
+const imageInput = document.querySelector("#imageInput");
+let uploadedImage = "";
+
+imageInput.addEventListener("change", function () {
+    const reader = new FileReader();
+    reader.addEventListener("load", () => {
+        uploadedImage = reader.result;
+        document.querySelector("#display").style.backgroundImage = `url(${uploadedImage})`
+    })
+    reader.readAsDataURL(this.files[0])
+})
+*/
+//Now all bug fixed
+
+//Creator Abinav Kumaran
+//GitHub Username: RealSlapp17XD
